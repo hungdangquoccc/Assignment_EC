@@ -1,0 +1,73 @@
+# CC = g++
+# CFLAGS = -std=c++11
+# TARGET = main.exe
+# SRC_DIR = src
+# OBJ_DIR = obj
+# OBJS = $(OBJ_DIR)/Certificate.o $(OBJ_DIR)/Employee.o $(OBJ_DIR)/EmployeeManager.o $(OBJ_DIR)/Experience.o $(OBJ_DIR)/Fresher.o $(OBJ_DIR)/Intern.o $(OBJ_DIR)/UserInterface.o
+
+# $(TARGET): $(OBJS)
+# 	$(CC)  -o $(TARGET) $(OBJS)
+
+# $(OBJ_DIR)/Certificate.o: $(SRC_DIR)/Certificate.cpp $(SRC_DIR)/Certificate.h 
+# 	$(CC)  -c $< -o $@
+
+# $(OBJ_DIR)/EmployeeManager.o: $(SRC_DIR)/EmployeeManager.cpp $(SRC_DIR)/EmployeeManager.h
+# 	$(CC)  -c $< -o $@
+
+# $(OBJ_DIR)/UserInterface.o: $(SRC_DIR)/UserInterface.cpp $(SRC_DIR)/EmployeeManager.h
+# 	$(CC)  -c $< -o $@
+
+
+
+# $(OBJ_DIR)/Employee.o: $(SRC_DIR)/Employee.cpp $(SRC_DIR)/Employee.h
+# 	$(CC)  -c $< -o $@
+
+# $(OBJ_DIR)/Experience.o: $(SRC_DIR)/Experience.cpp $(SRC_DIR)/Experience.h
+# 	$(CC)  -c $< -o $@
+
+# $(OBJ_DIR)/Fresher.o: $(SRC_DIR)/Fresher.cpp $(SRC_DIR)/Fresher.h
+# 	$(CC)  -c $< -o $@
+
+# $(OBJ_DIR)/Intern.o: $(SRC_DIR)/Intern.cpp $(SRC_DIR)/Intern.h
+# 	$(CC)  -c $< -o $@	
+
+
+# clean:
+# 	rm -f $(OBJS) $(TARGET)
+
+# ---------------------------------------------------
+
+CC = g++
+CFLAGS = -Wall -g #-std=c++11
+TARGET = main.exe
+OBJS = Certificate.o Employee.o EmployeeManager.o Experience.o Fresher.o Intern.o UserInterface.o
+
+
+$(TARGET): $(OBJS)
+	$(CC)  -o $(TARGET) $(OBJS)
+
+clean:
+	rm -f $(OBJS) $(TARGET)
+
+EmployeeManager.o: EmployeeManager.cpp EmployeeManager.h
+	$(CC)  -c EmployeeManager.cpp
+
+UserInterface.o: UserInterface.cpp EmployeeManager.h
+	$(CC)  -c UserInterface.cpp
+
+Certificate.o: Certificate.cpp Certificate.h 
+	$(CC)  -c Certificate.cpp
+	
+Employee.o: Employee.cpp Employee.h
+	$(CC)  -c Employee.cpp
+
+Experience.o: Experience.cpp Experience.h
+	$(CC)  -c Experience.cpp
+
+Fresher.o: Fresher.cpp Fresher.h
+	$(CC)  -c Fresher.cpp
+
+Intern.o: Intern.cpp Intern.h
+	$(CC)  -c Intern.cpp	
+
+

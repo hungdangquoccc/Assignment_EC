@@ -1,0 +1,31 @@
+
+# ----------------------------------------------------------------------------------
+main1: main.o Certificate.o Employee.o EmployeeManager.o Experience.o Fresher.o Intern.o UserInterface.o
+	g++ -o main1 main.o Certificate.o Employee.o EmployeeManager.o Experience.o Fresher.o Intern.o UserInterface.o
+	./main1
+main.o: main.cpp Certificate.h Employee.h EmployeeManager.h Experience.h Fresher.h Intern.h UserInterface.h
+	g++ -c main.cpp
+	
+Certificate.o: Certificate.cpp Certificate.h 
+	g++ -c Certificate.cpp
+	
+Employee.o: Employee.cpp Employee.h
+	g++ -c Employee.cpp
+
+EmployeeManager.o: EmployeeManager.cpp EmployeeManager.h
+	g++ -c EmployeeManager.cpp
+
+Experience.o: Experience.cpp Experience.h
+	g++ -c Experience.cpp
+
+Fresher.o: Fresher.cpp Fresher.h
+	g++ -c Fresher.cpp
+
+Intern.o: Intern.cpp Intern.h
+	g++ -c Intern.cpp
+	
+UserInterface.o: UserInterface.cpp UserInterface.h
+	g++ -c UserInterface.cpp
+
+clean:
+	del *.o main1
